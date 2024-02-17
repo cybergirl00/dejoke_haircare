@@ -9,12 +9,7 @@ import {db} from '@/assets/firebase'
 import Spinner from "./Spinner"
 
 
-interface Review {
-    id: string;
-    name: string;
-    content: string;
-    service: string;
-  }
+
   
 
 const Testimonials = () => {
@@ -22,7 +17,7 @@ const Testimonials = () => {
     const [content, setContent] = useState("")
     const [service, setService] = useState("")
     const [isLoading, setisLoading] = useState(false)
-    const [review, setReview] = useState<Review[]>([]);
+    const [review, setReview] = useState([]);
     const {isSignedIn} = useAuth();
     const [isRendering, setisRendering] = useState(false)
     const { user} = useUser();
