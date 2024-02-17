@@ -11,7 +11,7 @@ const About = () => {
       des: 'This consist of hair drying and conditioning'
     },
     {
-      key: 2,
+      key: 3,
       image: '/hair-losing.jpg',
       title: 'Normal hair losing',
       price: '300',
@@ -23,13 +23,6 @@ const About = () => {
       title: 'Attachment hair losing',
       price: '400',
       des: 'hair with attachment'
-    },
-    {
-      key: 3,
-      image: '/hair-relazing.jpg',
-      title: 'Hair Relaxing',
-      price: '',
-      des: 'The best you can get'
     },
     {
       key: 4,
