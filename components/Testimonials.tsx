@@ -9,12 +9,20 @@ import {db} from '@/assets/firebase'
 import Spinner from "./Spinner"
 
 
+interface Review {
+    id: string;
+    name: string;
+    content: string;
+    service: string;
+  }
+  
+
 const Testimonials = () => {
     let [isOpen, setIsOpen] = useState(false)
     const [content, setContent] = useState("")
     const [service, setService] = useState("")
     const [isLoading, setisLoading] = useState(false)
-    const [review, setReview] = useState([])
+    const [review, setReview] = useState<Review[]>([]);
     const {isSignedIn} = useAuth();
     const [isRendering, setisRendering] = useState(false)
     const { user} = useUser();
@@ -36,20 +44,20 @@ const Testimonials = () => {
     }
 }
 
-    useEffect(() => {
+useEffect(() => {
     const getReviews = async () => {
-        setisRendering(true)
-        const data = await getDocs(collection(db, 'reviews'))
-          const  setData = data.docs.map((doc) => ({
-                ...doc.data(),
-                id: doc.id
-            })) 
-            setReview(setData)
-            setisRendering(false)
-        
-    }
+      setisRendering(true);
+      const data = await getDocs(collection(db, 'reviews'));
+      const setData = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setReview(setData);
+      setisRendering(false);
+    };
     getReviews();
-    }, [])
+  }, []);
+
     
     if (isRendering)
     return  <Spinner />
@@ -109,7 +117,7 @@ const Testimonials = () => {
                 </div>
                 <div className="flex flex-col ">
                 <label htmlFor="" className="text-1xl p-2 text-purple-500 font-bold "></label>
-            <textarea name="" id="" className="p-5 border-2 border-purple-500 rounded-lg" cols="30" rows="10"
+            <textarea name="" id="" className="p-5 border-2 border-purple-500 rounded-lg" 
             onChange={(e) => setContent(e.target.value)}
             >Message</textarea>
                 </div>
