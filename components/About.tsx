@@ -12,7 +12,7 @@ const About = () => {
         </div>
         <div className="flex items-center justify-center p-6 space-x-3">
         <Image
-            src={'/about-img.jpg'}
+            src={'/hero-1.jpg'}
            width={600}
            height={600}
             alt="about-img"

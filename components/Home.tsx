@@ -4,7 +4,7 @@ const Home = () => {
   return (
    <section className="relative h-[700px] p-2 lg:h-[500px] xl:h-[1050px] items-center justify-center">
     <Image 
-    src={'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
+    src={'/hero-4.jpg'}
     layout="fill"
     objectFit="cover"
     objectPosition="center"
